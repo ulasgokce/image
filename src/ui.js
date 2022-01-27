@@ -28,10 +28,10 @@ export default class Ui {
       caption: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
-      image_class: make('div', [this.CSS.input, this.CSS.image_class], {
+      image_class: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
-      image_style: make('div', [this.CSS.input, this.CSS.image_class], {
+      image_style: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       })
     };
@@ -52,6 +52,8 @@ export default class Ui {
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
+    this.nodes.wrapper.appendChild(this.nodes.image_class);
+    this.nodes.wrapper.appendChild(this.nodes.image_style);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
