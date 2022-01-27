@@ -320,6 +320,10 @@ export default class ImageTool {
 
     this._data.caption = data.caption || '';
     this.ui.fillCaption(this._data.caption);
+    this._data.image_class = data.image_class || '';
+    this.ui.fillClass(this._data.caption);
+    this._data.image_style = data.image_style || '';
+    this.ui.fillStyle(this._data.image_style);
 
     Tunes.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;

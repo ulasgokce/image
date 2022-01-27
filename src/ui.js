@@ -234,7 +234,7 @@ export default class Ui {
     }
   }
   /**
-   * Shows caption input
+   * Shows class input
    *
    * @param {string} text - class
    * @returns {void}
@@ -245,16 +245,16 @@ export default class Ui {
     }
   } 
   /**
-  * Shows caption input
+  * Shows style input
   *
   * @param {string} text - style
   * @returns {void}
   */
- fillStyle(text) {
-   if (this.nodes.image_style) {
-     this.nodes.image_style.innerHTML = text;
-   }
- }
+  fillStyle(text) {
+    if (this.nodes.image_style) {
+      this.nodes.image_style.innerHTML = text;
+    }
+  }
 
   /**
    * Changes UI status
