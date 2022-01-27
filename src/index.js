@@ -123,7 +123,7 @@ export default class ImageTool {
       field: config.field || 'image',
       types: config.types || 'image/*',
       captionPlaceholder: this.api.i18n.t(config.captionPlaceholder || 'Caption'),
-      classPlaceholder: 'class1,class2,class3',
+      classPlaceholder: 'class1 class2 class3',
       stylePlaceholder: 'height:50px;width:50px;',
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
