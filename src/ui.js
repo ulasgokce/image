@@ -28,14 +28,13 @@ export default class Ui {
       caption: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
-      image_class: make('div', [this.CSS.input, this.CSS.caption], {
+      image_class: make('div', [this.CSS.input, this.CSS.image_class], {
         contentEditable: !this.readOnly,
       }),
-      image_style: make('div', [this.CSS.input, this.CSS.caption], {
+      image_style: make('div', [this.CSS.input, this.CSS.image_style], {
         contentEditable: !this.readOnly,
       })
     };
-
     /**
      * Create base structure
      *  <wrapper>

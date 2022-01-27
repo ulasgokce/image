@@ -320,8 +320,10 @@ export default class ImageTool {
 
     this._data.caption = data.caption || '';
     this.ui.fillCaption(this._data.caption);
+
     this._data.image_class = data.image_class || '';
-    this.ui.fillClass(this._data.caption);
+    this.ui.fillClass(this._data.image_class);
+
     this._data.image_style = data.image_style || '';
     this.ui.fillStyle(this._data.image_style);
 
