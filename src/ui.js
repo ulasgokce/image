@@ -28,6 +28,12 @@ export default class Ui {
       caption: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
+      image_class: make('div', [this.CSS.input, this.CSS.image_class], {
+        contentEditable: !this.readOnly,
+      }),
+      image_style: make('div', [this.CSS.input, this.CSS.image_class], {
+        contentEditable: !this.readOnly,
+      })
     };
 
     /**
@@ -41,6 +47,8 @@ export default class Ui {
      *  </wrapper>
      */
     this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
+    this.nodes.image_class.dataset.placeholder = this.config.classPlaceholder;
+    this.nodes.image_style.dataset.placeholder = this.config.stylePlaceholder;
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
@@ -67,6 +75,8 @@ export default class Ui {
       imagePreloader: 'image-tool__image-preloader',
       imageEl: 'image-tool__image-picture',
       caption: 'image-tool__caption',
+      image_style: 'image-tool__image_style',
+      image_class: 'image-tool__image_class',
     };
   };
 
@@ -218,11 +228,33 @@ export default class Ui {
    * @param {string} text - caption text
    * @returns {void}
    */
-  fillCaption(text) {
+   fillCaption(text) {
     if (this.nodes.caption) {
       this.nodes.caption.innerHTML = text;
     }
   }
+  /**
+   * Shows caption input
+   *
+   * @param {string} text - class
+   * @returns {void}
+   */
+   fillClass(text) {
+    if (this.nodes.image_class) {
+      this.nodes.image_class.innerHTML = text;
+    }
+  } 
+  /**
+  * Shows caption input
+  *
+  * @param {string} text - style
+  * @returns {void}
+  */
+ fillStyle(text) {
+   if (this.nodes.image_style) {
+     this.nodes.image_style.innerHTML = text;
+   }
+ }
 
   /**
    * Changes UI status

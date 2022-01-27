@@ -33,7 +33,9 @@
 /**
  * @typedef {object} ImageToolData
  * @description Image Tool's input and output data format
- * @property {string} caption — image caption
+ * @property {string} caption — image caption 
+ * @property {string} image_class — image class
+ * @property {string} image_style — image style
  * @property {boolean} withBorder - should image be rendered with border
  * @property {boolean} withBackground - should image be rendered with background
  * @property {boolean} stretched - should image be stretched to full width of container
@@ -57,6 +59,8 @@ import Uploader from './uploader';
  * @property {string} field - field name for uploaded image
  * @property {string} types - available mime-types
  * @property {string} captionPlaceholder - placeholder for Caption field
+ * @property {string} classPlaceholder - placeholder for Class field
+ * @property {string} stylePlaceholder - placeholder for Style field
  * @property {object} additionalRequestData - any data to send with requests
  * @property {object} additionalRequestHeaders - allows to pass custom headers with Request
  * @property {string} buttonContent - overrides for Select File button
@@ -119,6 +123,8 @@ export default class ImageTool {
       field: config.field || 'image',
       types: config.types || 'image/*',
       captionPlaceholder: this.api.i18n.t(config.captionPlaceholder || 'Caption'),
+      classPlaceholder: 'class1,class2,class3',
+      stylePlaceholder: 'height:50px;width:50px;',
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
       actions: config.actions || [],
@@ -196,8 +202,12 @@ export default class ImageTool {
    */
   save() {
     const caption = this.ui.nodes.caption;
+    const image_style = this.ui.nodes.image_style;
+    const image_class = this.ui.nodes.image_class;
 
     this._data.caption = caption.innerHTML;
+    this._data.image_style = image_style.innerHTML;
+    this._data.image_class = image_class.innerHTML;
 
     return this.data;
   }
